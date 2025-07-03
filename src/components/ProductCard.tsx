@@ -50,7 +50,7 @@ const ProductCard = ({ title, price, location, timeAgo, image, featured = false 
             <span className="text-2xl font-bold text-gray-900">{price}</span>
           </div>
 
-          <div className="flex items-center justify-between text-sm text-gray-500">
+          <div className="flex items-center justify-between text-sm text-gray-600">
             <div className="flex items-center space-x-1">
               <MapPin className="h-4 w-4" />
               <span>{location}</span>
