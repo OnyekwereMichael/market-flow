@@ -30,26 +30,26 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 px-4">
             <div className="text-center group">
               <div className="bg-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                <Zap className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                <Zap className="h-6 w-6 md:h-8 md:w-8 text-blue-600" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Lightning Fast</h3>
-              <p className="text-sm md:text-base text-gray-600">Find what you need in seconds with our AI-powered search</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900 group-hover:text-gray-700 transition-colors">Lightning Fast</h3>
+              <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-800 transition-colors">Find what you need in seconds with our AI-powered search</p>
             </div>
             
             <div className="text-center group">
               <div className="bg-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                <Shield className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                <Shield className="h-6 w-6 md:h-8 md:w-8 text-blue-600" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Secure & Safe</h3>
-              <p className="text-sm md:text-base text-gray-600">All transactions are protected with bank-level security</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900 group-hover:text-gray-700 transition-colors">Secure & Safe</h3>
+              <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-800 transition-colors">All transactions are protected with bank-level security</p>
             </div>
             
             <div className="text-center group">
               <div className="bg-white rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                <Users className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                <Users className="h-6 w-6 md:h-8 md:w-8 text-blue-600" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Trusted Community</h3>
-              <p className="text-sm md:text-base text-gray-600">Join millions of verified buyers and sellers</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900 group-hover:text-gray-700 transition-colors">Trusted Community</h3>
+              <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-800 transition-colors">Join millions of verified buyers and sellers</p>
             </div>
           </div>
         </div>
