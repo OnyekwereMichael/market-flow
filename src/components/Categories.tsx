@@ -18,20 +18,20 @@ const Categories = () => {
 
   return (
     <div className="bg-white border-b border-gray-100">
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex items-center space-x-6 overflow-x-auto scrollbar-hide">
+      <div className="container mx-auto px-4 py-4 md:py-6">
+        <div className="flex items-center space-x-4 md:space-x-6 overflow-x-auto scrollbar-hide pb-2">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
               <Link
                 key={category.name}
                 to={category.link}
-                className="flex flex-col items-center space-y-3 min-w-fit cursor-pointer group transition-all duration-200 hover:scale-105"
+                className="flex flex-col items-center space-y-2 md:space-y-3 min-w-fit cursor-pointer group transition-all duration-200 hover:scale-105"
               >
-                <div className={`p-4 rounded-2xl ${category.color} group-hover:shadow-lg transition-all duration-200`}>
-                  <IconComponent className="h-6 w-6" />
+                <div className={`p-3 md:p-4 rounded-2xl ${category.color} group-hover:shadow-lg transition-all duration-200`}>
+                  <IconComponent className="h-5 w-5 md:h-6 md:w-6" />
                 </div>
-                <span className="text-sm font-medium text-gray-700 group-hover:text-primary transition-colors whitespace-nowrap">
+                <span className="text-xs md:text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors whitespace-nowrap">
                   {category.name}
                 </span>
               </Link>
