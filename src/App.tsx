@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Marketplace from "./pages/Marketplace";
+import EnhancedMarketplace from "./pages/EnhancedMarketplace";
 import Sell from "./pages/Sell";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
@@ -23,6 +24,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/enhanced-marketplace" element={<EnhancedMarketplace />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />
