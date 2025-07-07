@@ -72,10 +72,12 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
               <Heart className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full animate-pulse"></span>
-            </Button>
+            <Link to="/notifications">
+              <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
+                <Bell className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full animate-pulse"></span>
+              </Button>
+            </Link>
             <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
               <ShoppingBag className="h-5 w-5" />
               <span className="absolute -top-1 -right-1 h-5 w-5 bg-blue-600 text-xs text-white rounded-full flex items-center justify-center font-medium">3</span>
@@ -152,10 +154,12 @@ const Header = () => {
                   <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
                     <Heart className="h-5 w-5" />
                   </Button>
-                  <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
-                    <Bell className="h-5 w-5" />
-                    <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full animate-pulse"></span>
-                  </Button>
+                  <Link to="/notifications">
+                    <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
+                      <Bell className="h-5 w-5" />
+                      <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full animate-pulse"></span>
+                    </Button>
+                  </Link>
                   <Button variant="ghost" size="icon" className="relative hover:bg-gray-100 rounded-xl">
                     <ShoppingBag className="h-5 w-5" />
                     <span className="absolute -top-1 -right-1 h-5 w-5 bg-blue-600 text-xs text-white rounded-full flex items-center justify-center font-medium">3</span>
