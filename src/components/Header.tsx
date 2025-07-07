@@ -2,14 +2,28 @@
 import { Search, Heart, User, ShoppingBag, Bell, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
+  const getLinkClasses = (path: string) => {
+    const baseClasses = "text-gray-700 hover:text-blue-600 font-medium transition-colors relative pb-1";
+    const activeClasses = "text-blue-600 border-b-2 border-blue-600";
+    return isActive(path) ? `${baseClasses} ${activeClasses}` : baseClasses;
   };
 
   return (
@@ -28,16 +42,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 ml-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <Link to="/" className={getLinkClasses('/')}>
               Home
             </Link>
-            <Link to="/marketplace" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <Link to="/marketplace" className={getLinkClasses('/marketplace')}>
               Browse
             </Link>
-            <Link to="/sell" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <Link to="/sell" className={getLinkClasses('/sell')}>
               Sell
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <Link to="/about" className={getLinkClasses('/about')}>
               About
             </Link>
           </nav>
@@ -107,28 +121,28 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <Link 
                 to="/" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
+                className={`${getLinkClasses('/')} py-2 border-b-0`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/marketplace" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
+                className={`${getLinkClasses('/marketplace')} py-2 border-b-0`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Browse
               </Link>
               <Link 
                 to="/sell" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
+                className={`${getLinkClasses('/sell')} py-2 border-b-0`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sell
               </Link>
               <Link 
                 to="/about" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors py-2"
+                className={`${getLinkClasses('/about')} py-2 border-b-0`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
