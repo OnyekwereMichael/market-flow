@@ -1,6 +1,7 @@
 
 import { Heart, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
   title: string;
@@ -9,11 +10,12 @@ interface ProductCardProps {
   timeAgo: string;
   image: string;
   featured?: boolean;
+  id?: string | number;
 }
 
-const ProductCard = ({ title, price, location, timeAgo, image, featured = false }: ProductCardProps) => {
+const ProductCard = ({ title, price, location, timeAgo, image, featured = false, id = 1 }: ProductCardProps) => {
   return (
-    <div className={`group cursor-pointer animate-fade-in ${featured ? 'ring-2 ring-primary/20' : ''}`}>
+    <Link to={`/product/${id}`} className={`group cursor-pointer animate-fade-in block ${featured ? 'ring-2 ring-primary/20' : ''}`}>
       <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden">
@@ -27,6 +29,7 @@ const ProductCard = ({ title, price, location, timeAgo, image, featured = false 
               variant="ghost"
               size="sm"
               className="bg-white/80 backdrop-blur-sm hover:bg-white w-8 h-8 p-0 rounded-full"
+              onClick={(e) => e.preventDefault()} // Prevent navigation when clicking heart
             >
               <Heart className="h-4 w-4" />
             </Button>
@@ -62,7 +65,7 @@ const ProductCard = ({ title, price, location, timeAgo, image, featured = false 
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
