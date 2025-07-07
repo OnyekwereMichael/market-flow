@@ -1,6 +1,7 @@
 
 import { Heart, MapPin, Clock, Share2, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface EnhancedProductCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface EnhancedProductCardProps {
   image: string;
   condition?: string;
   featured?: boolean;
+  id?: string | number;
 }
 
 const EnhancedProductCard = ({ 
@@ -19,10 +21,11 @@ const EnhancedProductCard = ({
   timeAgo, 
   image, 
   condition = "Used",
-  featured = false 
+  featured = false,
+  id = 1
 }: EnhancedProductCardProps) => {
   return (
-    <div className={`group cursor-pointer animate-fade-in ${featured ? 'ring-2 ring-blue-500/20' : ''}`}>
+    <Link to={`/product/${id}`} className={`group cursor-pointer animate-fade-in block ${featured ? 'ring-2 ring-blue-500/20' : ''}`}>
       <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden">
@@ -38,6 +41,7 @@ const EnhancedProductCard = ({
               variant="ghost"
               size="sm"
               className="bg-white/90 backdrop-blur-sm hover:bg-white w-8 h-8 p-0 rounded-full"
+              onClick={(e) => e.preventDefault()}
             >
               <Heart className="h-4 w-4" />
             </Button>
@@ -45,6 +49,7 @@ const EnhancedProductCard = ({
               variant="ghost"
               size="sm"
               className="bg-white/90 backdrop-blur-sm hover:bg-white w-8 h-8 p-0 rounded-full"
+              onClick={(e) => e.preventDefault()}
             >
               <Share2 className="h-4 w-4" />
             </Button>
@@ -52,6 +57,7 @@ const EnhancedProductCard = ({
               variant="ghost"
               size="sm"
               className="bg-white/90 backdrop-blur-sm hover:bg-white w-8 h-8 p-0 rounded-full"
+              onClick={(e) => e.preventDefault()}
             >
               <MessageCircle className="h-4 w-4" />
             </Button>
@@ -95,7 +101,7 @@ const EnhancedProductCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

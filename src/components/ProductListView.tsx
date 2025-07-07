@@ -1,6 +1,7 @@
 
 import { Heart, MapPin, Clock, Share2, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface ProductListViewProps {
   title: string;
@@ -11,6 +12,7 @@ interface ProductListViewProps {
   description?: string;
   condition?: string;
   featured?: boolean;
+  id?: string | number;
 }
 
 const ProductListView = ({ 
@@ -21,10 +23,11 @@ const ProductListView = ({
   image, 
   description,
   condition = "Used",
-  featured = false 
+  featured = false,
+  id = 1
 }: ProductListViewProps) => {
   return (
-    <div className={`group cursor-pointer bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border ${featured ? 'ring-2 ring-blue-500/20' : ''}`}>
+    <Link to={`/product/${id}`} className={`group cursor-pointer bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border block ${featured ? 'ring-2 ring-blue-500/20' : ''}`}>
       <div className="flex p-4 gap-4">
         {/* Image */}
         <div className="relative w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg">
@@ -72,20 +75,20 @@ const ProductListView = ({
             
             {/* Quick Actions */}
             <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+              <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={(e) => e.preventDefault()}>
                 <Heart className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+              <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={(e) => e.preventDefault()}>
                 <Share2 className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+              <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={(e) => e.preventDefault()}>
                 <MessageCircle className="h-4 w-4" />
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

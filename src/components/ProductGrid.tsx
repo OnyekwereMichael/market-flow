@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 const ProductGrid = () => {
   const products = [
     {
+      id: 1,
       title: "iPhone 14 Pro Max - Excellent Condition",
       price: "₦850,000",
       location: "Lagos, Nigeria",
@@ -12,6 +13,7 @@ const ProductGrid = () => {
       featured: true
     },
     {
+      id: 2,
       title: "2019 Toyota Camry - Low Mileage",
       price: "₦12,500,000",
       location: "Abuja, Nigeria",
@@ -19,6 +21,7 @@ const ProductGrid = () => {
       image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&h=300&fit=crop"
     },
     {
+      id: 3,
       title: "Modern 3BR Apartment - Fully Furnished",
       price: "₦2,500,000/year",
       location: "Victoria Island, Lagos",
@@ -27,6 +30,7 @@ const ProductGrid = () => {
       featured: true
     },
     {
+      id: 4,
       title: "MacBook Pro M2 - 16GB RAM, 512GB SSD",
       price: "₦1,200,000",
       location: "Ikeja, Lagos",
@@ -34,6 +38,7 @@ const ProductGrid = () => {
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop"
     },
     {
+      id: 5,
       title: "Nike Air Jordan 1 - Size 42",
       price: "₦85,000",
       location: "Port Harcourt",
@@ -41,6 +46,7 @@ const ProductGrid = () => {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
     },
     {
+      id: 6,
       title: "Samsung 55\" QLED Smart TV",
       price: "₦450,000",
       location: "Kano, Nigeria",
@@ -48,6 +54,7 @@ const ProductGrid = () => {
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
     },
     {
+      id: 7,
       title: "Gaming Laptop - RTX 3070, i7 Processor",
       price: "₦980,000",
       location: "Enugu, Nigeria",
@@ -56,6 +63,7 @@ const ProductGrid = () => {
       featured: true
     },
     {
+      id: 8,
       title: "Office Chair - Ergonomic Design",
       price: "₦75,000",
       location: "Ibadan, Nigeria",
@@ -85,6 +93,7 @@ const ProductGrid = () => {
         {products.map((product, index) => (
           <ProductCard
             key={index}
+            id={product.id}
             title={product.title}
             price={product.price}
             location={product.location}
